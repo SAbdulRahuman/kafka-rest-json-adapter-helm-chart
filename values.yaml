@@ -5,9 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
-  pullPolicy: IfNotPresent
+  repository: aseeni/kafka-rest-json-adapter
+  tag: latest
+  pullPolicy: Never
+  #  pullPolicy: IfNotPresent
 
 imagePullSecrets: []
 nameOverride: ""
@@ -32,7 +33,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 80
 
 ingress:
